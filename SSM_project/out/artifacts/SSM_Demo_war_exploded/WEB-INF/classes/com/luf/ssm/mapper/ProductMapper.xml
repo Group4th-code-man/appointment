@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--SQL映射文件: 定义增删改查的SQL语句..... -->
+
+<!--2. 基于Mapper接口开发-->
+<!--
+	(1) Mapper接口与SQL映射文件的绑定：SQL映射文件的namespace指定成接口的全类名；
+	(2) Mapper接口的方法与SQL语句的绑定：SQL语句的id值指定成接口的方法名；
+-->
+<mapper namespace="com.luf.ssm.mapper.ProductMapper">
+    <select id="selectAllProducts" resultType="com.luf.ssm.beans.Product">
+      select * from products
+    </select>
+
+    <delete id="deleteProduct">
+      delete from products where id = #{id}
+    </delete>
+</mapper>
+

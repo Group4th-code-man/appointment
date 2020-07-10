@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- settings 标签： 包含很多重要的设置项 -->
+    <settings>
+        <!-- 映射下划线到驼峰命名，可以使得写SQL语句为了映射列名和类属性，不需要给列名取别名 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+
+    <!-- 以下原来的mybatis的配置，通过SSM整合后，就可以全部在spring配置文件：applicationContext.xml中配置了 -->
+
+    <!-- 1. properties标签
+            resourse: 类路径下的资源文件；
+            url：网络路径或磁盘录下的资源文件；
+     -->
+    <!--<properties resource="db.properties"> </properties>-->
+
+    <!-- environments： 配置环境 -->
+    <!--<environments default="development">-->
+        <!--<environment id="development">-->
+            <!--<transactionManager type="JDBC"/>-->
+            <!--<dataSource type="POOLED">-->
+                <!--<property name="driver" value="org.sqlite.JDBC"/>-->
+                <!--<property name="url" value="jdbc:sqlite://D:/sqlite/webstore.db"/>-->
+                <!--<property name="username" value=""/>-->
+                <!--<property name="password" value=""/>-->
+
+                <!--&lt;!&ndash;另一种方式： 使用 properties标签 中定义的外部属性文件 &ndash;&gt;-->
+                <!--&lt;!&ndash;<property name="driver" value="${jdbc.driverClass}"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<property name="url" value="${jdbc.dburl}"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<property name="username" value=""/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<property name="password" value=""/>&ndash;&gt;-->
+
+            <!--</dataSource>-->
+        <!--</environment>-->
+    <!--</environments>-->
+
+    <!-- mappers： 引入SQL映射文件
+            <mapper>: 引入单个的SQL映射文件
+            <package>: 批量引入SQL映射文件
+                要求：Mapper接口与SQL映射文件必须同名同位置 （1. 类名和映射文件名一样，2.类路径下的同一个package名下）
+    -->
+    <!--<mappers>-->
+        <!--<mapper resource="ProductMapper.xml"/>-->
+        <!--&lt;!&ndash; <package name="com.luf.dao"/> &ndash;&gt;-->
+    <!--</mappers>-->
+
+</configuration>
